@@ -1,0 +1,45 @@
+<!--footer -->
+<footer>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-3 col-sm-12">
+                <p>
+                    <img src="<?php echo  $baseUrlFon ?>/imagenes/pagina/<?=$cLogo?>" width="200" height="48" alt="Lovefit" data-retina="true">
+                </p>
+                <div id="social">
+                    <ul>
+                                                <?php if($modelCliente->cFacebook != '') { ?>
+                        <li><a href="<?php echo $modelCliente->cFacebook ?>"><i class="icon-facebook"></i></a></li>
+                                                <?php } ?>
+                                                <?php if($modelCliente->cTwiter != '') { ?> 
+                        <li><a href="<?php echo $modelCliente->cTwiter ?>"><i class="icon-twitter"></i></a></li>
+                                                 <?php } ?>
+                                                 <?php if($modelCliente->cGoogle != '') { ?> 
+                        <li><a href="<?php echo $modelCliente->cGoogle ?>"><i class="icon-google"></i></a></li>
+                                                   <?php } ?>
+                                                  <?php if($modelCliente->cInstagram != '') { ?> 
+                        <li><a href="<?php echo $modelCliente->cInstagram ?>"><i class="icon-linkedin"></i></a></li>
+                                                    <?php } ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+            <?php echo SiteController::GetMenuFooter(); ?>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <h4>Contacto</h4>
+                <ul>
+                                        <li><span style="color: #fff">Teléfono:</span><a href="tel:<?php echo $modelCliente->cTelefono ?>"><?php echo $modelCliente->cTelefono ?></a>
+                    </li>
+                                            <li><span style="color: #fff">Correo Contacto:</span><a href="mailto:<?php echo $modelCliente->cCorreoContacto ?>"><?php echo $modelCliente->cCorreoContacto ?></a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+        <!-- End row -->
+    </div>
+    <!-- End container -->
+</footer>
+<!-- End footer -->

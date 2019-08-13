@@ -1,0 +1,53 @@
+<div class="layer"></div>
+<!-- Mobile menu overlay mask -->
+
+<div id="preloader">
+    <div data-loader="circle-side"></div>
+</div>
+<!-- End Preload -->
+
+<!-- Header ================================================== -->
+<header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-3">
+                <a href="<?php echo $urlGeneral ?>" id="logo">
+                    <img src="<?php echo  $baseUrlFon ?>/imagenes/pagina/<?=$cLogo?>" height="95" alt="" data-retina="true" class="logo_normal">
+                    <img src="<?php echo  $baseUrlFon ?>/imagenes/pagina/<?=$cLogo?>" width="95" height="27" alt="" data-retina="true" class="logo_sticky">
+                </a>
+            </div>
+            <nav class="col-xs-9">
+                <ul id="access_top">
+                    <?php if ($cNombreCliente=="") { ?>
+                    <li><a href="#" data-toggle="modal" data-target="#login" class="hidden-xs">Inicio Sessión</a>
+                    </li>
+                    <li><a href="#" data-toggle="modal" data-target="#register" class="hidden-xs">Registrar</a>
+                    </li>
+                                            <?php } 
+                                            else {
+                                                ?>
+                                            <li><a href="<?= Url::to(['/cliente/index']); ?>"  class="hidden-xs"><?php echo $cNombreCliente  ?></a>
+                    </li>
+                    <li><a href="<?= Url::to(['/site/logout']); ?>" >Cerrar Sessión</a>
+                    </li>
+                                            
+                                            <?php } ?>
+                </ul>
+                <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
+                <div class="main-menu">
+                    <div id="header_menu">
+                        <img src="<?php echo  $baseUrlFon ?>/imagenes/pagina/<?=$cLogo?>" width="95" height="27" alt="Antioquia" data-retina="true">
+                    </div>
+                    <a href="#" class="open_close" id="close_in"><i class="icon_close"></i></a>
+                    <ul>
+                     <?=SiteController::GetMenuHeader();?>
+                    </ul>
+                </div>
+                <!-- End main-menu -->
+            </nav>
+        </div>
+        <!-- End row -->
+    </div>
+    <!-- End container -->
+</header>
+<!-- End Header =============================================== -->
