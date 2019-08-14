@@ -6,9 +6,19 @@ import { Injectable } from '@angular/core';
 export class PostulantesService {
 
   Postulantes=[
-    {"Nombre":"../../../assets/img/slides/slide_1.jpg","Nombre":"Banner 1","href":""},
-    {"url":"../../../assets/img/slides/slide_2.jpg","Nombre":"Banner 2","href":""},
-    {"url":"../../../assets/img/slides/slide_3.jpg","Nombre":"Banner 3","href":""}
+    {"cNombre":"Harley Adrian Medina Estrella","cImg":"../../../assets/img/postulantes/persona.jpg","cUrl":"postulante-harley-adrian-medina-estrella-1","Conocimientos":"Javascript"},
+    {"cNombre":"Harley Adrian Medina Estrella","cImg":"../../../assets/img/postulantes/persona.jpg","cUrl":"postulante-harley-adrian-medina-estrella-1","Conocimientos":"Javascript"},
+    {"cNombre":"Harley Adrian Medina Estrella","cImg":"../../../assets/img/postulantes/persona.jpg","cUrl":"postulante-harley-adrian-medina-estrella-1","Conocimientos":"Javascript"},
+    {"cNombre":"Harley Adrian Medina Estrella","cImg":"../../../assets/img/postulantes/persona.jpg","cUrl":"postulante-harley-adrian-medina-estrella-1","Conocimientos":"Javascript"},
+    {"cNombre":"Harley Adrian Medina Estrella","cImg":"../../../assets/img/postulantes/persona.jpg","cUrl":"postulante-harley-adrian-medina-estrella-1","Conocimientos":"Javascript"},
+    {"cNombre":"Harley Adrian Medina Estrella","cImg":"../../../assets/img/postulantes/persona.jpg","cUrl":"postulante-harley-adrian-medina-estrella-1","Conocimientos":"Javascript"},
+    {"cNombre":"Harley Adrian Medina Estrella","cImg":"../../../assets/img/postulantes/persona.jpg","cUrl":"postulante-harley-adrian-medina-estrella-1","Conocimientos":"Javascript"},
+    {"cNombre":"Harley Adrian Medina Estrella","cImg":"../../../assets/img/postulantes/persona.jpg","cUrl":"postulante-harley-adrian-medina-estrella-1","Conocimientos":"Javascript"},
+    {"cNombre":"Harley Adrian Medina Estrella","cImg":"../../../assets/img/postulantes/persona.jpg","cUrl":"postulante-harley-adrian-medina-estrella-1","Conocimientos":"Javascript"},
+    {"cNombre":"Harley Adrian Medina Estrella","cImg":"../../../assets/img/postulantes/persona.jpg","cUrl":"postulante-harley-adrian-medina-estrella-1","Conocimientos":"Javascript"},
+    {"cNombre":"Harley Adrian Medina Estrella","cImg":"../../../assets/img/postulantes/persona.jpg","cUrl":"postulante-harley-adrian-medina-estrella-1","Conocimientos":"Javascript"},
+    {"cNombre":"Harley Adrian Medina Estrella","cImg":"../../../assets/img/postulantes/persona.jpg","cUrl":"postulante-harley-adrian-medina-estrella-1","Conocimientos":"Javascript"},
+    
   ]
   constructor() { }
 

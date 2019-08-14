@@ -3,46 +3,27 @@
     
     <div class="row">
        
-        <div class="col-md-4" data-tag="Yoga">
+        <div class="col-md-3" data-tag="Yoga" *ngFor="let Postulante of Postulantes">
             <div class="course_container">
-                <div class="ribbon top"><span>NUEVO</span>
+                <div class="ribbon top"><span>Seleccionado</span>
                 </div>
                 <figure>
                     <a href="">
-                        <img src="" width="800" height="533" class="img-responsive" alt="Image">
-                        <div class="short_info"><i class="icon-clock-1"></i>10 hrs</div>
-                    </a>
-                </figure>
-                <div class="course_title">
-                    <div class="type"><span>Curso</span>
-                    </div>
-                    <h3><a href="">Postulante 1</a></h3>
-                    <div class="info_2 clearfix"><span class="price"><sup>Programación</sup></span>
-                    </div>
-                </div>
-            </div>
-            <!-- End box course_container -->
-        </div>
-        <div class="col-md-4" data-tag="Yoga">
-            <div class="course_container">
-                <div class="ribbon top"><span>NUEVO</span>
-                </div>
-                <figure>
-                    <a href="">
-                        <img src="" width="800" height="533" class="img-responsive" alt="Image">
-                        <div class="short_info"><i class="icon-clock-1"></i>10 hrs</div>
+                        <img src="{{Postulante.cImg}}" width="800" height="533" class="img-responsive" alt="Image">
+                        
                     </a>
                 </figure>
                 <div class="course_title">
                     <div class="type"><span>Postulante</span>
                     </div>
-                    <h3><a href="">Postulante 1</a></h3>
-                    <div class="info_2 clearfix"><span class="price"><sup>Programación</sup></span>
+                    <h3><a href="">{{Postulante.cNombre}}</a></h3>
+                    <div class="info_2 clearfix"><span class="price"><sup>{{Postulante.Conocimientos}}</sup></span>
                     </div>
                 </div>
             </div>
             <!-- End box course_container -->
         </div>
+
     </div>
     
 </div>

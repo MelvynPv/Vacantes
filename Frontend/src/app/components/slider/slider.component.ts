@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SlidersService} from 'src/app/services/sliders/sliders.service'
 import {Router} from  '@angular/router'
-import * as $ from 'jquery';
 
 
 @Component({
