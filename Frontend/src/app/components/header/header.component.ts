@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $('[data-loader="circle-side"]').fadeOut();
   }
 
 }

@@ -24,9 +24,21 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/layautbase.css",
+              "src/assets/css/ion.rangeSlider.min.css",
+              "src/assets/css/font-awesome.min.css",
+              "src/assets/components/revolution_slider/css/settings.css",
+              "src/assets/components/revolution_slider/css/style.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/common_scripts_min.js",
+              "src/assets/js/jquery.validate.min.js",
+              "src/assets/js/functions.js",
+              "src/assets/components/revolution_slider/js/jquery.themepunch.plugins.min.js",
+              "src/assets/components/revolution_slider/js/jquery.themepunch.revolution.min.js"
+            ]
           },
           "configurations": {
             "production": {

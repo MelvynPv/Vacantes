@@ -1,0 +1,14 @@
+<div id="slideshow">
+    <div class="fullwidthbanner-container">
+        <div class="revolution-slider" style="height: 0; overflow: hidden;" >
+            <ul>    <!-- SLIDE  -->
+               <!-- Slide1 -->
+                <li data-transition="zoomin" data-slotamount="7" data-masterspeed="1500" *ngFor="let Slider of Sliders">
+              
+                    <a href="{{Slider.href}}"><img src="{{Slider.url}}"  alt="{{Slider.Nombre}}"></a>
+                </li>
+                               
+            </ul>
+        </div>
+    </div>
+</div>
