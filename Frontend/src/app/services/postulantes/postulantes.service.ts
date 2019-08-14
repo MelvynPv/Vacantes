@@ -25,4 +25,8 @@ export class PostulantesService {
   ObtenerPostulaciones (maximo) {
     return this.Postulantes;
   }
+
+  ObtenerPostulanteByUrl (cUrl) {
+    return this.Postulantes.find(x=>x.cUrl==cUrl);
+  }
 }
