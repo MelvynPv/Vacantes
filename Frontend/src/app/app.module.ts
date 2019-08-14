@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -14,12 +14,12 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { ReccomendationComponent } from './components/reccomendation/reccomendation.component';
 import { ToppostulantesComponent } from './components/toppostulantes/toppostulantes.component';
 import { HomeAboutusComponent } from './components/home-aboutus/home-aboutus.component';
-import { ListaPostulantesComponent } from './components/lista-postulantes/lista-postulantes.component';
-import { PostulanteComponent } from './components/postulante/postulante.component';
-import { ListavacantesComponent } from './components/listavacantes/listavacantes.component';
-import { VacanteComponent } from './components/vacante/vacante.component';
-import { ListaEmpresaComponent } from './components/lista-empresa/lista-empresa.component';
-import { EmpresaComponent } from './components/empresa/empresa.component';
+import { ListaPostulantesComponent } from './pages/lista-postulantes/lista-postulantes.component';
+import { PostulanteComponent } from './pages/postulante/postulante.component';
+import { ListavacantesComponent } from './pages/listavacantes/listavacantes.component';
+import { VacanteComponent } from './pages/vacante/vacante.component';
+import { ListaEmpresaComponent } from './pages/lista-empresa/lista-empresa.component';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +40,7 @@ import { EmpresaComponent } from './components/empresa/empresa.component';
     ListavacantesComponent,
     VacanteComponent,
     ListaEmpresaComponent,
-    EmpresaComponent
+   
   ],
   imports: [
     BrowserModule,
