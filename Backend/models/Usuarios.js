@@ -2,9 +2,18 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Usuario = Schema({
-    cNombre: String,
-    cPassword: String,
-    cCorreo: String,
+    cNombre: {
+        type:String,
+        required:true
+    },
+    cPassword:{
+        type: String,
+        required:true
+    },
+    cCorreo:{
+        type:String,
+        required:true
+    },
     cImagen:{
         type:String,
         default:''

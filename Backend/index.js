@@ -1,12 +1,17 @@
 require('dotenv').config()
 const express = require('express');
-const mongoose = require('mongoose');
-
+const {mongoose} = require('./database');//connection database
 const app = express();
 
-//Settings
-app.set('PORT',process.env.PORT || process.env.PORT);
 
+//Settings
+app.set('PORT',process.env.PORT || 3000);
+
+//middlewares
+app.use(express.json());
+
+//Routes
+app.use('/Empresa',require('./Routes/Empresa.routes'));
 
 //start the server
 app.listen(app.get('PORT'),() =>{
