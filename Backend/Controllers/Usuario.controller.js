@@ -13,23 +13,30 @@ UsuarioController.Nuevo = async (req,res) => {
             } else if (respuesta !== null) {
                 res.status(200).json({ cMensaje: `El correo ${params.cCorreo} ya esta en uso` });
             } else {
-                let NuevoUsuario = UsuarioModel({
-                    cNombre: params.cNombre,
-                    cPassword: EncriptarContrasenia(params.cPassword),
-                    cCorreo: params.cCorreo,
-                    cTipoUsuario: params.cTipoUsuario
+                bcrypt.genSalt(10, function(err, salt) {
+        
+                    bcrypt.hash(params.cPassword, salt, function(err, hash) {
+                        
+                        let NuevoUsuario = UsuarioModel({
+                            cNombre: params.cNombre,
+                            cPassword: hash,
+                            cCorreo: params.cCorreo,
+                            cTipoUsuario: params.cTipoUsuario
+                        });
+                        NuevoUsuario.save((err, resp) => {
+                            if(err){
+                                res.status(500).json({cMensaje: 'Ocurrio un error al guardar', err});
+                            } 
+                            if(resp) {
+                                NuevoUsuario.cPassword = ':(';//para retornar
+                                res.status(201).json({status: 'Ok', data: resp});
+                            } else {
+                                res.status(400).json({cMensaje: 'No se creo el usuario'});
+                            }
+                        });
+                    });
                 });
-                NuevoUsuario.save((err, resp) => {
-                    if(err){
-                        res.status(500).json({cMensaje: 'Ocurrio un error al guardar', err});
-                    } 
-                    if(resp) {
-                        NuevoUsuario.cPassword = ':(';//para retornar
-                        res.status(201).json({status: 'Ok', data: resp});
-                    } else {
-                        res.status(400).json({cMensaje: 'No se creo el usuario'});
-                    }
-                });
+               
                 
             }
         });
@@ -112,19 +119,15 @@ function ParametrosSonValidos(oParametros,lEsModificacion = false){
     return true;
 }
 
-function EncriptarContrasenia(cPassword){
-    bcrypt.genSalt(process.env.saltRounds, function(err, salt) {
-        if(err){
-            res.status(500).json({cMensaje: 'Ocurrio un error al encriptar', err});
-        } 
+/*function EncriptarContrasenia(cPassword,res){
+    bcrypt.genSalt(10, function(err, salt) {
+        
         bcrypt.hash(cPassword, salt, function(err, hash) {
-            if(err){
-                res.status(500).json({cMensaje: 'Ocurrio un error al guardar', err});
-            } 
+            
             return hash
         });
     });
 
 
-}
+}*/
 module.exports = UsuarioController;
