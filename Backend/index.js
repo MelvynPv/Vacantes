@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express');
 const {mongoose} = require('./database');//connection database
 const app = express();
+const cors = require('cors');
 
 
 //Settings
@@ -9,6 +10,7 @@ app.set('PORT',process.env.PORT || 3000);
 
 //middlewares
 app.use(express.json());
+app.use(cors());
 
 //Routes
 app.use('/Empresa',require('./Routes/Empresa.routes'));
