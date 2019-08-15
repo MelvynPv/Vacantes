@@ -11,6 +11,10 @@ const AreasConomientoSchema = Schema({
     dtFechaCreacion:{type:Date, default:Date.now},
     dtFechaModificacion:{type:Date, default:Date.now},
     lActivo:{type:Boolean, default:true},
+    cUrl:{
+        type:String,
+        required:true
+    }
 });
 
 module.exports = mongoose.model('AreasConocimiento',AreasConomientoSchema);

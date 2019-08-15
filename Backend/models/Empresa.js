@@ -12,6 +12,10 @@ const EmpresaSchema = new Schema ({
     Usuario:{
         type:Schema.Types.ObjectId,
         ref:'Usuario'
+    },
+    cUrl:{
+        type:String,
+        required:true
     }
 });
 

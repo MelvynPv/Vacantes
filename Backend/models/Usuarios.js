@@ -14,10 +14,6 @@ const Usuario = Schema({
         type:String,
         required:true
     },
-    cImagen:{
-        type:String,
-        default:''
-    },
     cTipoUsuario: {
         type:String,
         required:true
@@ -36,5 +32,4 @@ const Usuario = Schema({
     }
 });
 
-const UsuarioModel = mongoose.model('Usuario',Usuario);
-module.exports = {UsuarioModel};
+module.exports = mongoose.model('Usuario',Usuario);

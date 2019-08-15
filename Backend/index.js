@@ -12,6 +12,8 @@ app.use(express.json());
 
 //Routes
 app.use('/Empresa',require('./Routes/Empresa.routes'));
+app.use('/Usuario',require('./Routes/Usuario.routes'));
+
 
 //start the server
 app.listen(app.get('PORT'),() =>{

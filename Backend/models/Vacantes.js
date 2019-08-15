@@ -16,6 +16,10 @@ const VacanteSchema = Schema({
         required:true,
         default: 0
     },
+    dSueldo:{
+        type: mongoose.decimal128,
+        required:true
+    },
     cTitulo: {
         type:String,
         required:true
@@ -43,6 +47,10 @@ const VacanteSchema = Schema({
     lDisponible:{//indica si esta disponible la vacante
         type:Boolean, 
         default:true
+    },
+    cUrl:{
+        type:String,
+        required:true
     }
 });
 

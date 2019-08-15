@@ -1,21 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/Nuevo',(req,res) => {
-    res.send('Esta es una nueva empresa');
-});
+const CtrEmpresa = require('../Controllers/Empresa.controller');
 
-router.get('/Modificar',(req,res) => {
-    res.send('Estas modificando una empresa');
-});
+router.post('/Nuevo',CtrEmpresa.Nuevo);
 
-router.get('/Recuperar',(req,res) => {
-    res.send('Estas Recuperando una emprsa');
-});
+router.put('/Modificar:/id',CtrEmpresa.Modificar);
 
-router.get('/Inactivar',(req,res) => {
-    res.send('Estas Inactivar un empresa');
-});
+router.get('/Recuperar/:id',CtrEmpresa.ObtenerUnRegistro);
 
+router.put('/Inactivar/:id',CtrEmpresa.Inactivar);
+
+router.get('/ObtenerTodos',CtrEmpresa.ObtenerTodos);
 
 module.exports = router;
