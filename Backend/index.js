@@ -15,6 +15,7 @@ app.use(cors());
 //Routes
 app.use('/Empresa',require('./Routes/Empresa.routes'));
 app.use('/Usuario',require('./Routes/Usuario.routes'));
+app.use('/Postulante',require('./Routes/Postulante.routes'));
 
 
 //start the server

@@ -19,7 +19,7 @@ const PostulanteSchema = Schema({
         default: ""
     },
     dIngresosRequeridos:{
-        type:mongoose.decimal128,
+        type:Number,
         required:true
     },
     cEstadoCivil:{
@@ -36,7 +36,8 @@ const PostulanteSchema = Schema({
     },
     Usuario:{
         type:Schema.Types.ObjectId,
-        ref:'Usuario'
+        ref:'Usuario',
+        required:true
     },
     Conocimientos: {
         type: Schema.Types.ObjectId,

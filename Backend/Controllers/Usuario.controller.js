@@ -36,8 +36,6 @@ UsuarioController.Nuevo = async (req,res) => {
                         });
                     });
                 });
-               
-                
             }
         });
     }else{
@@ -79,18 +77,18 @@ UsuarioController.Modificar = async (req,res) => {
 UsuarioController.ObtenerUnRegistro = async (req,res) => {
     const {id} = req.body;
     await UsuarioModel.findOne({_id:id})
-                        .them((err,UsuarioExistente) =>{
-                            if (err) {
-                                res.status(500).json({ message: 'Ocurrio un Error' });
-                            } else if (respuesta === null) {
-                                res.status(200).json({ message: `No se encontro el usuario indicado` });
-                            } else {
-                                res.status(201).json({status: 'Ok', data: UsuarioExistente});
-                            }
-                        })
-                        .catch((err) =>{
-                            res.status(500).json({ message: 'Ocurrio un Error al buscar el usuario' });
-                        });
+            .them((err,UsuarioExistente) =>{
+                if (err) {
+                    res.status(500).json({ message: 'Ocurrio un Error' });
+                } else if (respuesta === null) {
+                    res.status(200).json({ message: `No se encontro el usuario indicado` });
+                } else {
+                    res.status(201).json({status: 'Ok', data: UsuarioExistente});
+                }
+            })
+            .catch((err) =>{
+                res.status(500).json({ message: 'Ocurrio un Error al buscar el usuario' });
+            });
 }
 
 UsuarioController.Inactivar = async function(req,res){
