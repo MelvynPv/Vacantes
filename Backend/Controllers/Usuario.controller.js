@@ -110,7 +110,8 @@ UsuarioController.IniciarSesion = async (req,res) => {
             bcrypt.compare(cPassword,UsuarioExistente.cPassword,(err,lCorrecto)=>{
                 console.log(lCorrecto);
                 if(lCorrecto){
-                    res.status(201).json({status: 'Logueado'});
+                    UsuarioExistente.cPassword=';)';
+                    res.status(201).json({status: 'Logueado',data:UsuarioExistente});
                 }else{
                     res.status(200).json({ cMensaje: `Contraseña incorrecta...` });
                 }

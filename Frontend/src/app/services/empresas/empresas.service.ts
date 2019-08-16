@@ -36,6 +36,11 @@ export class EmpresasService {
     return this.Empresas.find(x=>x.cUrl==cUrl);
   }
 
+  upload(uploadData)
+  {
+    return this.http.post('http://localhost:3000/Generico/Upload/', uploadData);
+      
+  }
 
 
 
