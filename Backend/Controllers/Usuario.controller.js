@@ -107,15 +107,13 @@ UsuarioController.IniciarSesion = async (req,res) => {
         } else if (UsuarioExistente === null) {
             res.status(200).json({ cMensaje: `No se encontro la sesión con el correo ${cCorreo}` });
         } else {
-            bcrypt.genSalt(10, function(err, salt) {
-                bcrypt.hash(cPassword, salt, function(err, hash) {
-                    
-                    if(hash == UsuarioExistente.cPassword){
-                        res.status(201).json({status: 'Logueado'});
-                    }else{
-                        res.status(200).json({ cMensaje: `Contraseña incorrecta...` });
-                    }
-                });
+            bcrypt.compare(cPassword,UsuarioExistente.cPassword,(err,lCorrecto)=>{
+                console.log(lCorrecto);
+                if(lCorrecto){
+                    res.status(201).json({status: 'Logueado'});
+                }else{
+                    res.status(200).json({ cMensaje: `Contraseña incorrecta...` });
+                }
             });
 
             
