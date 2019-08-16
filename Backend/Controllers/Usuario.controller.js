@@ -101,31 +101,27 @@ UsuarioController.ObtenerTodos = async function(req,res){
 
 UsuarioController.IniciarSesion = async (req,res) => {
     const {cCorreo,cPassword} = req.body;
-    await UsuarioModel.findOne({cCorreo:cCorreo})
-                        .them((err,UsuarioExistente) =>{
-                            if (err) {
-                                res.status(500).json({ cMensaje: 'Ocurrio un Error' });
-                            } else if (respuesta === null) {
-                                res.status(200).json({ cMensaje: `No se encontro el usuario indicado` });
-                            } else {
-                                bcrypt.genSalt(10, function(err, salt) {
-                                    bcrypt.hash(cPassword, salt, function(err, hash) {
-                                        
-                                        if(hash == UsuarioExistente.cPassword){
-                                            res.status(201).json({status: 'Logueado'});
-                                        }else{
-                                            res.status(200).json({ cMensaje: `Contraseña incorrecta...` });
-                                        }
-                                    });
-                                });
+    await UsuarioModel.findOne({cCorreo:cCorreo},(err,UsuarioExistente) =>{
+        if (err) {
+            res.status(500).json({ cMensaje: 'Ocurrio un Error' });
+        } else if (UsuarioExistente === null) {
+            res.status(200).json({ cMensaje: `No se encontro la sesión con el correo ${cCorreo}` });
+        } else {
+            bcrypt.genSalt(10, function(err, salt) {
+                bcrypt.hash(cPassword, salt, function(err, hash) {
+                    
+                    if(hash == UsuarioExistente.cPassword){
+                        res.status(201).json({status: 'Logueado'});
+                    }else{
+                        res.status(200).json({ cMensaje: `Contraseña incorrecta...` });
+                    }
+                });
+            });
 
-                                
+            
 
-                            }
-                        })
-                        .catch((err) =>{
-                            res.status(500).json({ cMensaje: 'Ocurrio un Error al iniciar sesión' });
-                        });
+        }
+    });
 }
 
 function ParametrosSonValidos(oParametros,lEsModificacion = false){
