@@ -1,0 +1,57 @@
+<div class="container margin_60_35">
+    <div class="row">
+            <div class="col-md-6">
+                
+            <p><button class="btn danger" (click)="RegresarLista()">Regresar a la Lista</button></p>
+            </div>
+        </div>
+    <div class="row">
+
+        <div class="col-md-9">
+            <h3>{{cTituloform}}</h3>
+            
+         <div>
+
+    </div>
+
+    <form  (ngSubmit)="createEntidad()" [formGroup]="postForm">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                    <label>Empresa</label>
+                     <input type="text" class="form-control required" formControlName="cNombreEmpresa"  placeholder="" required="true" (keyup)="urlSeo($event)">
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                    <label>URL</label>
+                    <input type="text" class="form-control required" formControlName="cUrl" placeholder="" required="true">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-md-12 col-sm-6">
+                    <div class="form-group">
+                        <label>RFC</label>
+                        <input type="text" class="form-control required" formControlName="cRFC" placeholder="" required="true">
+                         
+                    </div>
+                </div>
+        </div>
+
+        <div class="row">
+                <div class="col-md-12 col-sm-6">
+                    <div class="form-group">
+                        <label>Descripción</label>
+                        <textarea class="form-control required" name="" id="" rows="3" formControlName="cDescripcion"></textarea>
+                         
+                    </div>
+                </div>
+        </div>
+        <div class="row">
+                <div class="col-md-6">
+                <p><input type="submit" value="Enviar" class="btn_1"></p>
+                </div>
+            </div>
+    </form>
+</div>

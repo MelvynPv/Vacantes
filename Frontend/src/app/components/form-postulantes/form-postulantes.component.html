@@ -1,0 +1,80 @@
+<div class="container margin_60_35">
+
+    <div class="row">
+
+        <div class="col-md-9">
+            <h3>{{cTituloform}}</h3>
+            
+         <div>
+
+    </div>
+
+    <form  (ngSubmit)="createEntidad()" [formGroup]="postForm">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                    <label>Nombre</label>
+                     <input type="text" class="form-control required" formControlName="cNombre"  placeholder="" required="true" (keyup)="urlSeo($event)">
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <label>Url</label>
+                        <input type="text" class="form-control required" formControlName="cUrl" placeholder="" required="true">
+                    </div>
+                </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                    <label>Ingresos Requeridos</label>
+                     <input type="text" class="form-control required" formControlName="dIngresosRequeridos"  placeholder="" required="true">
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                    <label>Estado Civil</label>
+                    <input type="text" class="form-control required" formControlName="cEstadoCivil" placeholder="" required="true">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label>Edad</label>
+                            <input type="text" class="form-control required" formControlName="iEdad" placeholder="" required="true">
+                        </div>
+                    </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <label>Estado</label>
+                        <input type="text" class="form-control required" formControlName="cEstado" placeholder="" required="true">   
+                    </div>
+                </div>
+                
+        </div>
+        <div class="row">
+                <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label>Escolaridad</label>
+                            <input type="text" class="form-control required" formControlName="cEscolaridad" placeholder="" required="true">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label>Idiomas</label>
+                                <input type="text" class="form-control required" formControlName="cIdiomas" placeholder="" required="true">
+                            </div>
+                    </div>
+
+        </div>
+
+        <div class="row">
+                <div class="col-md-6">
+                    
+                        <p><input type="submit" value="Enviar" class="btn_1"></p>
+                </div>
+            </div>
+    </form>
+</div>

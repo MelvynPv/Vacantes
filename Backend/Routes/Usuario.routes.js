@@ -13,7 +13,7 @@ router.put('/Inactivar/:id',CtrUsuario.Inactivar);
 
 router.get('/ObtenerTodos',CtrUsuario.ObtenerTodos);
 
-router.get('/Login',CtrUsuario.IniciarSesion);
+router.post('/Login',CtrUsuario.IniciarSesion);
 
 
 module.exports = router;

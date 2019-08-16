@@ -1,0 +1,86 @@
+<div class="container margin_60_35">
+        <div class="row">
+                <div class="col-md-6">
+                    
+                <p><button class="btn danger" (click)="RegresarLista()">Regresar a la Lista</button></p>
+                </div>
+            </div>
+        <div class="row">
+
+			<div class="col-md-9">
+				<h3>{{cTituloform}}</h3>
+				
+			 <div>
+
+        </div>
+  
+        <form  (ngSubmit)="createVacante()" [formGroup]="postForm">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <label>Título</label>
+                         <input type="text" class="form-control required" formControlName="cTitulo"  placeholder="" required="true">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <label>Url</label>
+                        <input type="text" class="form-control required" formControlName="cUrl" placeholder="" required="true">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label>Puesto</label>
+                             <input type="text" class="form-control required" formControlName="cPuesto"  placeholder="" required="true">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label>Conocimientos Requeridos</label>
+                            <input type="text" class="form-control required" formControlName="ConocimientosRequeridos" placeholder="" required="true">
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label>Vacantes Disponibles</label>
+   
+                             <input type="number" class="form-control required" formControlName="iCantidadDisponibles"  placeholder="" required="true">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label>Vacantes Ocupadas</label>
+                            <input type="number" class="form-control required" formControlName="iCantidadOcupadas" placeholder="" required="true">
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label>Sueldo</label>
+   
+                             <input type="number" class="form-control required" formControlName="dSueldo"  placeholder="" required="true">
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-12 col-sm-6">
+                        <div class="form-group">
+                            <label>Descripción</label>
+                            <textarea class="form-control required" name="" id="" rows="3" formControlName="cDescripcion"></textarea>
+                             
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-6">
+                        
+                                                    <p><input type="button" value="Enviar" class="btn_1" id="submit-contact" name="submit-contact"></p>
+                    </div>
+                </div>
+        </form>
+</div>

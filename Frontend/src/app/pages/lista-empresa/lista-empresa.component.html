@@ -1,1 +1,33 @@
-<p>lista-empresa works!</p>
+<div class="container margin_60_35">
+        <h2 class="main_title"><em></em>Lista de Empresas<span>Postulantes.com</span></h2>
+        <div class="row">
+            <div class="col-md-12"><button class="btn danger">Agregar Empresa <i class="fa fa-plus"></i></button></div>
+            <br>&nbsp;
+        </div>
+        <div class="row">
+           
+            <div class="col-md-3" data-tag="Yoga" *ngFor="let Empresa of Empresas">
+                <div class="course_container">
+                    <div class="ribbon top"><span>Nueva</span>
+                    </div>
+                    <figure>
+                        <a [routerLink]="[ '/empresa/',Empresa.cUrl]">
+                            <img src="{{Empresa.cImagen}}"  class="img-responsive" alt="Image">
+                            <div class="short_info">Cantidad de Vacantes : {{ Empresa.Vacantes?.length || '0' }} </div>
+                        </a>
+                    </figure>
+                    <div class="course_title">
+                        <div class="type"><span>Empresa</span>
+                        </div>
+                        <h3><a [routerLink]="[ '/empresa/',Empresa.cUrl]">{{Empresa.cNombreEmpresa}}</a></h3>
+                        <div class="info_2 clearfix">
+                            <a [routerLink]="[ '/empresa/',Empresa.cUrl]"><i class="fa fa-edit"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End box course_container -->
+            </div>
+    
+        </div>
+        
+    </div>

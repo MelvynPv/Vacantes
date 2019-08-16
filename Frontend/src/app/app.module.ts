@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -19,6 +22,10 @@ import { PostulanteComponent } from './pages/postulante/postulante.component';
 import { ListavacantesComponent } from './pages/listavacantes/listavacantes.component';
 import { VacanteComponent } from './pages/vacante/vacante.component';
 import { ListaEmpresaComponent } from './pages/lista-empresa/lista-empresa.component';
+import { FormVacantesComponent } from './components/form-vacantes/form-vacantes.component';
+import { FormEmpresasComponent } from './components/form-empresas/form-empresas.component';
+import { FormPostulantesComponent } from './components/form-postulantes/form-postulantes.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -40,11 +47,17 @@ import { ListaEmpresaComponent } from './pages/lista-empresa/lista-empresa.compo
     ListavacantesComponent,
     VacanteComponent,
     ListaEmpresaComponent,
+    FormVacantesComponent,
+    FormEmpresasComponent,
+    FormPostulantesComponent,
    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
