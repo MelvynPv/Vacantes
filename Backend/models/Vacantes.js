@@ -17,7 +17,7 @@ const VacanteSchema = Schema({
         default: 0
     },
     dSueldo:{
-        type: mongoose.decimal128,
+        type: Number,
         required:true
     },
     cTitulo: {
@@ -30,7 +30,8 @@ const VacanteSchema = Schema({
     },
     ConocimientosRequeridos: {
         type: Schema.Types.ObjectId,
-        ref:'AreasConocimiento'
+        ref:'AreasConocimiento',
+        required:true
     },
     dtFechaCreacion:{
         type:Date, 

@@ -15,6 +15,7 @@ app.use('/Empresa',require('./Routes/Empresa.routes'));
 app.use('/Usuario',require('./Routes/Usuario.routes'));
 app.use('/Postulante',require('./Routes/Postulante.routes'));
 app.use('/Generico',require('./Routes/generico.routes'));
+app.use('/Vacante',require('./Routes/Vacante.routes'));
 
 //start the server
 app.listen(app.get('PORT'),() =>{
