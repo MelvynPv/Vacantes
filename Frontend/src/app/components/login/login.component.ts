@@ -34,7 +34,7 @@ this.LoginForm=new FormGroup({
 
   ValidarUsuario()
   {
-    console.log(this.LoginForm.value);
+    
     this.srvUsuario.validarUsuario(this.LoginForm.value).subscribe((data:any) =>{
         
          localStorage.setItem('dataUsuarios',JSON.stringify(data.data));

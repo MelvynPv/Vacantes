@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VacantesService } from 'src/app/services/vacantes/vacantes.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-form-vacantes',
@@ -30,7 +31,7 @@ export class FormVacantesComponent implements OnInit {
 
   ngOnInit() {
     this.cUrl = this.actvdRoute.snapshot.paramMap.get('cUrl');
-    console.log('Usuarios',localStorage.getItem('dataSource'));
+    
     if(this.cUrl != null && this.cUrl != ''){
       this.setForm(this.cUrl);
     }
@@ -69,7 +70,11 @@ export class FormVacantesComponent implements OnInit {
     } else {
     this.srvVacante.guardarVacante(this.postForm.value)
       .subscribe( res => {
-        console.log(res);
+        Swal.fire(
+          'Good job!',
+          'El Registro se ha Guardado correctamente',
+          'success'
+        )
       }, (err) => {
         console.log(err);
       })

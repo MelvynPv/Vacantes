@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import Swal from 'sweetalert2'
 @Injectable({
   providedIn: 'root'
 })
 export class VacantesService {
-  url = "http://localhost:4200/vacantes";
+  url = "http://localhost:3000/Vacante";
   token = "sgrshehje43246tew";
   httpOptions = {
     headers: new HttpHeaders({
@@ -25,7 +26,7 @@ export class VacantesService {
 
   guardarVacante (data) {
     console.log(data);
-    const uri = `${this.url}/nuevo`;
+    const uri = `${this.url}/Nuevo`;
     let body = JSON.stringify({
       ...data
     })
